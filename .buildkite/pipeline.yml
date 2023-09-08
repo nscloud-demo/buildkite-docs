@@ -1,8 +1,3 @@
-agents:
-  nsc-cache-tag: nscloud-demo/buildkite-docs
-  nsc-cache-size: 20gb
-  nsc-experimental-containerd-cache-relative-path: containers
-
 steps:
   - label: ":rspec: RSpec"
     depends_on: linting
@@ -20,6 +15,11 @@ steps:
             - CI
             - RAILS_ENV
             - BUILDKITE_ANALYTICS_TOKEN
+    agents:
+      nsc-cache-tag: nscloud-demo/buildkite-docs
+      nsc-cache-size: 20gb
+      nsc-experimental-containerd-cache-relative-path: containers
+    
 
   - label: ":lipstick: Compile assets"
     depends_on: "linting"
