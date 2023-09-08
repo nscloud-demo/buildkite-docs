@@ -1,3 +1,6 @@
+agents:
+  nsc-experimental-git-mirror: "true"
+
 steps:
   - label: ":rspec: RSpec"
     depends_on: linting
@@ -16,6 +19,7 @@ steps:
             - RAILS_ENV
             - BUILDKITE_ANALYTICS_TOKEN
     agents:
+      nsc-experimental-git-mirror: "true"
       nsc-cache-tag: nscloud-demo/buildkite-docs
       nsc-cache-size: 20gb
       nsc-experimental-containerd-cache-relative-path: containers
